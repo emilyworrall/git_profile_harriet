@@ -12,5 +12,5 @@ Thumbs.db
 !/log/.keep
 /tmp
 
-/node-modules
+/node_modules
 /bower_components
