@@ -10,4 +10,4 @@ githubUserSearch.controller('GitUserSearchController', ['Search',
         });
     };
 
-  }]);
+}]);
