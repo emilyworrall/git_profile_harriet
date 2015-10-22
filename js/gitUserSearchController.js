@@ -7,7 +7,7 @@ githubUserSearch.controller('GitUserSearchController', ['Search',
       Search.query(self.searchTerm)
         .then(function(response) {
           self.searchResult = response.data;
-        })
+        });
     };
 
   }]);
