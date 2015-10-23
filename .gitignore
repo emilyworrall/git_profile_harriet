@@ -15,5 +15,4 @@ Thumbs.db
 /node_modules
 /public/bower_components
 
-/public/js/secrets.js
 /.bowerrc
