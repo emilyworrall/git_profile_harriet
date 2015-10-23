@@ -16,3 +16,4 @@ Thumbs.db
 /public/bower_components
 
 /public/js/secrets.js
+/.bowerrc
