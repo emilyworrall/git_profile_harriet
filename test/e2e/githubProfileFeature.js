@@ -33,7 +33,7 @@ describe('GitHub profile finder', function() {
       expect(profiles.last().getText()).toEqual('ptolemyrulz');
     });
 
-    it('count the number of Spikes', function() {
+    it('count the number of Ptolemys', function() {
       browser.get('http://localhost:8080');
       searchBox.sendKeys('ptolemybarnes');
       searchButton.click();
