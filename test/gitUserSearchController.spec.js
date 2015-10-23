@@ -16,29 +16,30 @@ describe('GitUserSearchController', function() {
 
     var httpBackend;
     beforeEach(inject(function($httpBackend) {
-      httpBackend = $httpBackend
+      httpBackend = $httpBackend;
       httpBackend
-        .expectGET("https://api.github.com/search/users?access_token=" + github_token + "&q=hello")
+        .expectGET('https://api.github.com/search/users?access_token=' +
+        gitAccessToken + '&q=hello')
         .respond(
-          { items: items }
+          {items: items}
         );
     }));
 
     afterEach(function() {
       httpBackend.verifyNoOutstandingExpectation();
       httpBackend.verifyNoOutstandingRequest();
-     });
+    });
 
     var items = [
       {
-        "login": "tansaku",
-        "avatar_url": "https://avatars.githubusercontent.com/u/30216?v=3",
-        "html_url": "https://github.com/tansaku"
+        'login': 'tansaku',
+        'avatar_url': 'https://avatars.githubusercontent.com/u/30216?v=3',
+        'html_url': 'https://github.com/tansaku'
       },
       {
-        "login": "stephenlloyd",
-        "avatar_url": "https://avatars.githubusercontent.com/u/196474?v=3",
-        "html_url": "https://github.com/stephenlloyd"
+        'login': 'stephenlloyd',
+        'avatar_url': 'https://avatars.githubusercontent.com/u/196474?v=3',
+        'html_url': 'https://github.com/stephenlloyd'
       }
     ];
 
