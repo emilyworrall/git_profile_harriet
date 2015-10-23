@@ -4,42 +4,46 @@ describe('GitHub profile finder', function() {
 
   beforeEach(function() {
     mock(['githubUserSearch.js']);
-    browser.get('http://localhost:8080');
-  });
-
-  afterEach(function() {
-    mock.teardown();
   });
 
   var searchBox = element(by.model('searchCtrl.searchTerm'))
   var searchButton = element(by.className('btn'))
 
   it('has a title', function() {
-     expect(browser.getTitle()).toEqual('Github user search');
+    browser.get('http://localhost:8080');
+    expect(browser.getTitle()).toEqual('Github user search');
    });
 
   it('finds profiles', function() {
-    searchBox.sendKeys('spike01');
+    browser.get('http://localhost:8080');
+    searchBox.sendKeys('ptolemybarnes');
     searchButton.click();
 
     var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
-    expect(profiles.get(0).getText()).toEqual('spike01');
+    expect(profiles.get(0).getText()).toEqual('ptolemybarnes');
   });
 
-  it('finds the last Spike', function() {
-    searchBox.sendKeys('spike');
+  it('finds the last ptolemy', function() {
+    browser.get('http://localhost:8080');
+    searchBox.sendKeys('ptolemybarnes');
     searchButton.click();
 
     var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
-    expect(profiles.last().getText()).toEqual('spikelynch');
+    expect(profiles.last().getText()).toEqual('ptolemyrulz');
   });
 
   it('count the number of Spikes', function() {
-    searchBox.sendKeys('spike');
+    browser.get('http://localhost:8080');
+    searchBox.sendKeys('ptolemybarnes');
     searchButton.click();
 
     element.all(by.repeater('user in searchCtrl.searchResult.items')).then(function(items) {
-      expect(items.length).toBe(30);
+      expect(items.length).toBe(2);
     });
   });
+
+  afterEach(function() {
+    mock.teardown();
+  });
+
 });

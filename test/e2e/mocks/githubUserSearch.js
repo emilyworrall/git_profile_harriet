@@ -49,6 +49,8 @@ module.exports = [
         site_admin: false,
         score: 18.009634
       }
+        ]
+      }
     }
   }
 ]
